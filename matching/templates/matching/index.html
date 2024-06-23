@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+    <input name="word" type="hidden"  value="{{ word }}" />
+    <div class="flex items-center justify-center px-5">
+        <div class="rounded-lg bg-gray-200">
+        <div class="flex">
+            <div class="flex items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 px-5 bg-gray-200">
+                {{ word }}
+            </div>
+            <input name="answer" type="text" class="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0" placeholder="" id="">
+            <input type="submit" value="Search" class="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors">
+        </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
